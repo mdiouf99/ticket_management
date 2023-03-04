@@ -1,0 +1,25 @@
+
+entity User {
+
+}
+entity Ticket {
+
+    libelle String
+    status Status
+    dateCreation LocalDate
+
+}
+
+relationship OneToMany{
+	User to Ticket
+    User to Ticket{assignea}
+}
+enum Status {
+    RECU, EN_COURS, EN_ATTENTE, NE_PAS_TRAITER, TERMINE, CLOTURE
+}
+
+
+
+
+
+

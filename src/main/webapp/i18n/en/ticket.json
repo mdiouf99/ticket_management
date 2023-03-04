@@ -1,0 +1,29 @@
+{
+  "ticketmanagementApp": {
+    "ticket": {
+      "home": {
+        "title": "Tickets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Ticket",
+        "createOrEditLabel": "Create or edit a Ticket",
+        "search": "Search for Ticket",
+        "notFound": "No Tickets found"
+      },
+      "created": "A new Ticket is created with identifier {{ param }}",
+      "updated": "A Ticket is updated with identifier {{ param }}",
+      "deleted": "A Ticket is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Ticket {{ id }}?"
+      },
+      "detail": {
+        "title": "Ticket"
+      },
+      "id": "ID",
+      "libelle": "Libelle",
+      "status": "Status",
+      "dateCreation": "Date Creation",
+      "user": "User",
+      "assignea": "Assignea"
+    }
+  }
+}

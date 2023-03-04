@@ -1,0 +1,42 @@
+{
+  "applications": "*",
+  "changelogDate": "20230216152054",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "ticket",
+  "fields": [
+    {
+      "fieldName": "libelle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "RECU,EN_COURS,EN_ATTENTE,NE_PAS_TRAITER,TERMINE,CLOTURE"
+    },
+    {
+      "fieldName": "dateCreation",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Ticket",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "ticket",
+      "relationshipName": "user",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "ticket",
+      "relationshipName": "assignea",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

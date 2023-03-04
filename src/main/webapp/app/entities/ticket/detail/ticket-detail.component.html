@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="ticket">
+      <h2 data-cy="ticketDetailsHeading"><span jhiTranslate="ticketmanagementApp.ticket.detail.title">Ticket</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ ticket.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ticketmanagementApp.ticket.libelle">Libelle</span></dt>
+        <dd>
+          <span>{{ ticket.libelle }}</span>
+        </dd>
+        <dt><span jhiTranslate="ticketmanagementApp.ticket.status">Status</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'ticketmanagementApp.Status.' + ticket.status }}">{{ ticket.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="ticketmanagementApp.ticket.dateCreation">Date Creation</span></dt>
+        <dd>
+          <span>{{ ticket.dateCreation | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="ticketmanagementApp.ticket.user">User</span></dt>
+        <dd>
+          <span>{{ ticket.user?.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ticketmanagementApp.ticket.assignea">Assignea</span></dt>
+        <dd>
+          <span>{{ ticket.assignea?.id }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/ticket', ticket.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

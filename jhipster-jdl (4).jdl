@@ -1,0 +1,26 @@
+entity User {
+	nom String
+    prenom String 
+    code String
+    role Role
+	 
+}
+entity Role {
+    libelle String
+}
+entity Ticket {
+libelle String 
+dateCreation LocalDate 
+}
+relationship OneToOne{
+ User to Role 
+}
+relationship OneToMany{
+	User to Ticket
+}
+
+
+
+
+
+

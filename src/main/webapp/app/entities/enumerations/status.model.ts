@@ -1,0 +1,13 @@
+export enum Status {
+  RECU = 'RECU',
+
+  EN_COURS = 'EN_COURS',
+
+  EN_ATTENTE = 'EN_ATTENTE',
+
+  NE_PAS_TRAITER = 'NE_PAS_TRAITER',
+
+  TERMINE = 'TERMINE',
+
+  CLOTURE = 'CLOTURE',
+}

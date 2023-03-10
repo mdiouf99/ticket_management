@@ -1,0 +1,26 @@
+language: java
+jdk: openjdk17
+
+services:
+  - docker
+
+# Pre-testing installs
+install:
+  - echo "nothing needs to be installed"
+
+# Scripts to be run such as tests
+before_script:
+  - echo "no tests"
+
+script:
+  - docker --version # print the version for logging
+  - docker-compose -f docker-compose-build.yaml build --parallel # build images
+  - docker tag udagram-api-feed $DOCKER_USERNAME/udagram-api-feed:v4  # feed-service image
+  - docker tag udagram-api-user $DOCKER_USERNAME/udagram-api-user:v4  # user-service image
+  - docker tag udagram-frontend $DOCKER_USERNAME/udagram-frontend:v4  # frontend-service image
+  - docker tag reverseproxy $DOCKER_USERNAME/reverseproxy:v4          # reverseproxy image
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push $DOCKER_USERNAME/ticket-management-backend:$TRAVIS_BUILD_ID
+ 

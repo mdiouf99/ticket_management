@@ -4,8 +4,8 @@ node {
             checkout scm
         }
         stage('Build') {
-          sh 'pwd'
-          sh 'mvn install'
+          bat 'dir'
+          bat 'mvn install'
                 
         }
 }
